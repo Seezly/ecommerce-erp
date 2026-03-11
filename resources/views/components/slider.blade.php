@@ -24,7 +24,7 @@
             @endif
             @if (isset($slider['link']))
                 <a href="{{ $slide['link'] }}">
-                    <img src="{{ $slide['url'] }}" alt="{{ $slide['alt'] }}">
+                    <img class="w-full h-full object-cover" src="{{ $slide['url'] }}" alt="{{ $slide['alt'] }}">
                 </a>
             @else
                 <img src="{{ $slide['url'] }}" alt="{{ $slide['alt'] }}">
