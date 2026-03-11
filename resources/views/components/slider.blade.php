@@ -6,7 +6,7 @@
     'autoplay' => true
 ])
 
-<section class="relative w-full h-[50vh] flex overflow-hidden">
+<section class="relative w-full h-[50vh] mb-8 flex overflow-hidden">
     @foreach ($slider as $slide)
         <div class="w-full h-full shrink-0">
             @if ($text)
@@ -27,7 +27,7 @@
                     <img class="w-full h-full object-cover" src="{{ $slide['url'] }}" alt="{{ $slide['alt'] }}">
                 </a>
             @else
-                <img src="{{ $slide['url'] }}" alt="{{ $slide['alt'] }}">
+                <img class="w-full h-full object-cover" src="{{ $slide['url'] }}" alt="{{ $slide['alt'] }}">
             @endif
         </div>
     @endforeach
