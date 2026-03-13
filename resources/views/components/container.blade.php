@@ -9,7 +9,7 @@
 	@foreach ($items as $item)
 		@if ($component === 'product')
 			<div
-				class="h-100 rounded-lg{{ $type === 'slider' ? ' shrink-0' : '' }} @6xl:w-[22.5%] mb-4 flex w-[30%] flex-col items-center justify-between overflow-hidden shadow-lg">
+				class="h-100 rounded-lg{{ $type === 'slider' ? ' shrink-0' : '' }} @5xl:w-[22.5%] mb-4 flex w-[30%] flex-col items-center justify-between overflow-hidden shadow-lg">
 				<x-product-card :item="$item" />
 			</div>
 		@else
