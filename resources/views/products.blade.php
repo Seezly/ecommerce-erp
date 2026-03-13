@@ -91,11 +91,9 @@
 	];
 @endphp
 
-<x-layouts::index :title="__('Inicio')">
-	<x-slider :slider="$slider" />
-	{{-- <x-filter /> --}}
-	<x-container type="container" component="category" :items="$categories" />
-	<x-container type="slider" component="category" :items="$categories" />
-	<x-container type="container" component="product" :items="$items" />
-	<x-container type="slider" component="product" :items="$items" />
-</x-layouts::index>
+<x-layouts::app title="Productos">
+	<h1>Productos</h1>
+	<x-modal title="Favoritos">
+		<x-product-horizontal-card :items="$items" />
+	</x-modal>
+</x-layouts::app>
