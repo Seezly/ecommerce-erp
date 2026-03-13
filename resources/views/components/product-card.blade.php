@@ -12,8 +12,8 @@
 <div class="h-5/12 flex w-full flex-col items-start justify-between px-6">
 	<span class="rounded-full bg-gray-300 px-2 py-1 text-sm font-extralight">{{ $item['category'] }}</span>
 	<div class="my-4">
-		<h3 class="text-2xl font-bold">{{ $item['title'] }}</h3>
-		<p>{{ $item['description'] }}</p>
+		<h3 class="text-lg font-medium">{{ $item['title'] }}</h3>
+		<p class="text-sm">{{ $item['description'] }}</p>
 	</div>
 	<span class="rounded-full bg-gray-300 px-2 py-1 text-sm font-extralight">{{ $item['stock'] }} unidades</span>
 </div>
@@ -22,9 +22,9 @@
 	<div class="flex flex-col items-start justify-between">
 		@if ($item['discountPrice'] > 0)
 			<span class="text-xs font-extralight text-red-500 line-through">${{ $item['price'] }}</span>
-			<p class="text-xl font-bold">${{ $item['discountPrice'] }}</p>
+			<p class="text-xl font-medium">${{ $item['discountPrice'] }}</p>
 		@else
-			<p class="text-xl font-bold">${{ $item['price'] }}</p>
+			<p class="text-xl font-medium">${{ $item['price'] }}</p>
 		@endif
 	</div>
 	<div class="flex items-center justify-end gap-2">
