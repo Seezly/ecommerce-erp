@@ -5,11 +5,11 @@
 ])
 
 <section
-	class="{{ $type === 'container' ? 'justify-start flex-wrap' : 'relative overflow-hidden' }} mb-8 flex w-full items-center gap-[3.33%] p-4">
+	class="{{ $type === 'container' ? 'justify-start flex-wrap' : 'relative overflow-hidden' }} @container mb-8 flex w-full items-center gap-[3.33%] p-4">
 	@foreach ($items as $item)
 		@if ($component === 'product')
 			<div
-				class="h-100 rounded-lg{{ $type === 'slider' ? ' shrink-0' : '' }} mb-4 flex w-[22.5%] flex-col items-center justify-between overflow-hidden shadow-lg">
+				class="h-100 rounded-lg{{ $type === 'slider' ? ' shrink-0' : '' }} @6xl:w-[22.5%] mb-4 flex w-[30%] flex-col items-center justify-between overflow-hidden shadow-lg">
 				<x-product-card :item="$item" />
 			</div>
 		@else
