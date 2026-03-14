@@ -23,6 +23,7 @@
 		<div class="flex w-full items-start justify-between">
 			<x-filter />
 			<main class="mx-auto w-2/3">
+				<x-order-by />
 				{{ $slot }}
 			</main>
 		</div>

@@ -94,8 +94,28 @@
 <x-layouts::index :title="__('Inicio')">
 	<x-slider :slider="$slider" />
 	{{-- <x-filter /> --}}
-	<x-container type="container" component="category" :items="$categories" />
-	<x-container type="slider" component="category" :items="$categories" />
-	<x-container type="container" component="product" :items="$items" />
-	<x-container type="slider" component="product" :items="$items" />
+	<x-card-container>
+		@foreach ($items as $item)
+			<x-product-card :item="$item" />
+		@endforeach
+	</x-card-container>
+	<x-card-container cols="6">
+		@foreach ($categories as $item)
+			<x-category-card :item="$item" />
+		@endforeach
+	</x-card-container>
+	<x-card-slider>
+		@foreach ($items as $item)
+			<div class="w-full shrink-0 md:basis-[calc(50%-1rem)] lg:basis-[calc(25%-1rem)]">
+				<x-product-card type="slide" :item="$item" />
+			</div>
+		@endforeach
+	</x-card-slider>
+	<x-card-slider>
+		@foreach ($categories as $item)
+			<div class="w-full shrink-0 md:basis-[calc(25%-1rem)] lg:basis-[calc(17.5%-1rem)]">
+				<x-category-card :item="$item" />
+			</div>
+		@endforeach
+	</x-card-slider>
 </x-layouts::index>

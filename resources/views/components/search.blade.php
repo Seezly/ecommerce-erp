@@ -1,5 +1,5 @@
 <form class="w-30 relative flex items-center justify-between rounded-full border bg-gray-200" role="search">
-	<input class="h-full w-9/12 appearance-none rounded-l-full px-4 py-2" type="text" name="q" id="q"
+	<input class="h-full w-9/12 appearance-none rounded-l-full px-4 py-2" type="search" name="q" id="q"
 		placeholder="Ctrl + K">
 	<button class="absolute right-2 cursor-pointer">
 		<svg xmlns="http://www.w3.org/2000/svg" class="size-4"

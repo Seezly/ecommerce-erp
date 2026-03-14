@@ -93,7 +93,10 @@
 
 <x-layouts::app title="Productos">
 	<h1>Productos</h1>
-	<x-modal title="Favoritos">
-		<x-product-horizontal-card :items="$items" />
-	</x-modal>
+	{{-- <x-cart /> --}}
+	<x-aside title="Favoritos" type="cart">
+		@foreach ($items as $item)
+			<x-product-horizontal-card :item="$item" type="cart" />
+		@endforeach
+	</x-aside>
 </x-layouts::app>

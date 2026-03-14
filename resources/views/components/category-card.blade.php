@@ -1,7 +1,7 @@
 @props([
-    'item' => []
+    'item' => [],
 ])
 
-<a class="w-1/6 p-4 flex justify-center items-center rounded-full shadow-lg" href="{{ $item['url'] }}">
-    <p>{{ $item['title'] }}</p>
+<a class="flex items-center justify-center rounded-full p-4 shadow-lg" href="{{ $item['url'] }}">
+	<p>{{ $item['title'] }}</p>
 </a>
