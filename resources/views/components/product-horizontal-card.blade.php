@@ -7,7 +7,7 @@
 	<div class="size-28 overflow-hidden">
 		<img class="h-full w-full object-cover" src="{{ $item['image'] }}" alt="{{ $item['title'] }}">
 	</div>
-	<div class="relative flex h-full w-2/3 flex-col items-start gap-2">
+	<div class="relative flex h-full flex-1 flex-col items-start gap-2">
 		<p class="text-lg">{{ $item['title'] }}</p>
 		<div class="flex flex-col items-start justify-between">
 			@if ($item['discountPrice'] > 0)
