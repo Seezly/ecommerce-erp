@@ -1,5 +1,5 @@
-<x-layouts::dashboard :title="__('Dashboard')">
-	<h1 class="mb-4 text-2xl font-bold">Cuentas por vencer</h1>
+<x-layouts::dashboard :title="__('Mis Cuentas')">
+	<h1 class="mb-4 text-2xl font-bold">Mis Cuentas</h1>
 	<div class="flex h-full w-full flex-1 flex-col gap-4 rounded-lg">
 		<div class="grid auto-rows-min gap-4 md:grid-cols-4">
 			<div
