@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('order_items', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('order_id')->constrained('orders');
-            $table->uuid('product_id')->constrained('products');
-            $table->uuid('variant_id')->constrained('product_variants');
+            $table->foreignUuid('order_id');
+            $table->foreignUuid('product_id');
+            $table->foreignUuid('variant_id')->constrained('product_variants');
             $table->string('title');
             $table->decimal('price', 12);
-            $table->uuid('currency')->constrained('currencies');
+            $table->foreignUuid('currency');
             $table->integer('quantity');
             $table->timestamps();
         });

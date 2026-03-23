@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('currencies', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->string('code')->unique();
-            $table->string('symbol');
-            $table->integer('decimals');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignUuid('business_id')->constrained('businesses');
+            $table->foreignUuid('role_id')->constrained('roles');
         });
     }
 
@@ -25,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('currencies');
+        //
     }
 };

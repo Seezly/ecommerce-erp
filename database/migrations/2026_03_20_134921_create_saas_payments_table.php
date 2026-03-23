@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('saas_payments', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('business_id')->constrained('businesses');
+            $table->foreignUuid('business_id');
             $table->decimal('amount', 12);
-            $table->uuid('currency_id')->constrained('currencies');
+            $table->foreignUuid('currency_id');
             $table->string('status');
             $table->string('method');
             $table->string('transaction_id')->unique();

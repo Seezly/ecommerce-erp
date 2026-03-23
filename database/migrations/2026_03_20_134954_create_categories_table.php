@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('business_id')->constrained('businesses');
+            $table->foreignUuid('business_id');
             $table->string('name');
             $table->string('slug');
-            $table->uuid('parent_id')->constrained('categories');
+            $table->foreignUuid('parent_id')->constrained('categories');
             $table->timestamps();
             $table->softDeletes();
             $table->unique(['business_id', 'name']);

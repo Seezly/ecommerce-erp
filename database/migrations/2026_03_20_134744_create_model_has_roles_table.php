@@ -12,12 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('model_has_roles', function (Blueprint $table) {
-            $table->uuid('role_id');
-            $table->foreign('role_id')->references('id')->on('roles');
-            $table->uuid('permission_id');
-            $table->foreign('permission_id')->references('id')->on('permissions');
-            $table->uuid('business_id');
-            $table->foreign('business_id')->references('id')->on('businesses');
+            $table->foreignUuid('role_id')->references('id')->on('roles');
+            $table->foreignUuid('permission_id')->references('id')->on('permissions');
+            $table->foreignUuid('business_id')->references('id')->on('businesses');
             $table->timestamps();
             $table->primary(['role_id', 'permission_id', 'business_id']);
         });

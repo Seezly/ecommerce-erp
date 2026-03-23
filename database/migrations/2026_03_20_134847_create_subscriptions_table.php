@@ -13,14 +13,11 @@ return new class extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->uuid('id');
-            $table->uuid('business_id');
-            $table->foreign('business_id')->references('id')->on('businesses');
-            $table->uuid('plan_id');
-            $table->foreign('plan_id')->references('id')->on('plans');
+            $table->foreignUuid('business_id')->references('id')->on('businesses');
+            $table->foreignUuid('plan_id')->references('id')->on('plans');
             $table->string('status');
             $table->decimal('price_snapshot', 12);
-            $table->uuid('currency_id');
-            $table->foreign('currency_id')->references('id')->on('currencies');
+            $table->foreignUuid('currency_id')->references('id')->on('currencies');
             $table->dateTime('starts_at');
             $table->dateTime('ends_at');
             $table->timestamps();

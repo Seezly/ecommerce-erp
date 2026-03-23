@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('product_requirement_options', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('product_requirement_id')->constrained('product_requirements');
+            $table->foreignUuid('product_requirement_id')->constrained('product_requirements');
             $table->string('value');
             $table->timestamps();
         });

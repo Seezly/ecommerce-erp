@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('product_requirements', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('product_id')->constrained('products');
+            $table->foreignUuid('product_id');
             $table->string('name');
             $table->string('type');
             $table->boolean('required');

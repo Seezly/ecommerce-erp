@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('plan_features', function (Blueprint $table) {
             $table->uuid('id');
-            $table->uuid('plan_id');
-            $table->foreign('plan_id')->references('id')->on('plans');
+            $table->foreignUuid('plan_id')->references('id')->on('plans');
             $table->string('key');
             $table->string('value');
             $table->timestamps();

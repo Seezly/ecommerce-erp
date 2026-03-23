@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('business_id')->constrained('businesses');
-            $table->uuid('user_id')->constrained('users');
+            $table->foreignUuid('business_id');
+            $table->foreignUuid('user_id');
             $table->string('status');
             $table->decimal('total', 12);
-            $table->uuid('currency')->constrained('currencies');
+            $table->foreignUuid('currency');
             $table->decimal('exchange_rate', 12);
             $table->timestamps();
         });

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('business_id')->constrained('businesses');
-            $table->uuid('category_id')->constrained('categories');
+            $table->foreignUuid('business_id');
+            $table->foreignUuid('category_id');
             $table->string('title');
             $table->string('slug');
             $table->text('description');

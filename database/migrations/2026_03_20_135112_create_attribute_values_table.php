@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('attribute_values', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('attribute_id')->constrained('attributes');
+            $table->foreignUuid('attribute_id');
             $table->string('value');
             $table->timestamps();
         });

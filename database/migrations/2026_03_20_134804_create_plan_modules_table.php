@@ -12,10 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('plan_modules', function (Blueprint $table) {
-            $table->uuid('plan_id');
-            $table->foreign('plan_id')->references('id')->on('plans');
-            $table->uuid('module_id');
-            $table->foreign('module_id')->references('id')->on('modules');
+            $table->foreignUuid('plan_id')->constrained('plans');
+            $table->foreignUuid('module_id')->constrained('modules');
             $table->timestamps();
             $table->primary(['plan_id', 'module_id']);
         });

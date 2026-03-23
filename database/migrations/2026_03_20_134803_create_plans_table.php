@@ -12,11 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('plans', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->decimal('price', 12, 2);
-            $table->uuid('currency_id');
-            $table->foreign('currency_id')->references('id')->on('currencies');
+            $table->foreignUuid('currency_id')->references('id')->on('currencies');
             $table->string('billing_cycle');
             $table->boolean('is_active');
             $table->timestamps();

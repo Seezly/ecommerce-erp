@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('product_variant_attributes', function (Blueprint $table) {
-            $table->uuid('product_variant_id')->constrained('product_variants');
-            $table->uuid('attribute_value_id')->constrained('attribute_values');
+            $table->foreignUuid('product_variant_id')->constrained('product_variants');
+            $table->foreignUuid('attribute_value_id')->constrained('attribute_values');
             $table->timestamps();
             $table->primary(['product_variant_id', 'attribute_value_id']);
         });

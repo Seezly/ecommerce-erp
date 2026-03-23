@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('referral_earnings', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('referrer_business_id')->constrained('businesses');
-            $table->uuid('referred_business_id')->constrained('businesses');
+            $table->foreignUuid('referrer_business_id')->constrained('businesses');
+            $table->foreignUuid('referred_business_id')->constrained('businesses');
             $table->decimal('amount', 12);
-            $table->uuid('currency')->constrained('currencies');
+            $table->foreignUuid('currency');
             $table->string('status');
             $table->timestamps();
         });

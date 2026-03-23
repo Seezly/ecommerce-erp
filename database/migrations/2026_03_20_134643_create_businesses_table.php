@@ -15,11 +15,9 @@ return new class extends Migration
             $table->uuid('id');
             $table->string('name');
             $table->string('status');
-            $table->uuid('currency_id');
-            $table->foreign('currency_id')->references('id')->on('currencies');
+            $table->foreignUuid('currency_id')->references('id')->on('currencies');
             $table->string('referral_code')->unique();
-            $table->uuid('referred_by_business_id');
-            $table->foreign('referred_by_business_id')->references('id')->on('businesses');
+            $table->foreignUuid('referred_by_business_id')->references('id')->on('businesses');
             $table->dateTime('trial_ends_at');
             $table->timestamps();
             $table->softDeletes();
