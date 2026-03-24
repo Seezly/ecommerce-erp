@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->foreignUuid('business_id')->constrained('businesses');
             $table->foreignUuid('role_id')->constrained('roles');
+            $table->unique(['business_id', 'email']);
         });
     }
 

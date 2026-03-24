@@ -15,10 +15,10 @@ return new class extends Migration
             $table->uuid('id');
             $table->string('name');
             $table->string('status');
-            $table->foreignUuid('currency_id')->references('id')->on('currencies');
+            $table->foreignUuid('currency_id')->constrained('currencies');
             $table->string('referral_code')->unique();
-            $table->foreignUuid('referred_by_business_id')->references('id')->on('businesses');
-            $table->dateTime('trial_ends_at');
+            $table->foreignUuid('referred_by_business_id')->nullable()->default(null)->constrained('businesses');
+            $table->dateTime('trial_ends_at')->default(now()->addDays(14));
             $table->timestamps();
             $table->softDeletes();
             $table->primary('id');
